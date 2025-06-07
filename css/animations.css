@@ -1,0 +1,73 @@
+/* ===== ANIMATIONS ===== */
+
+/* Hover Effect for Book Cards */
+.book-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.book-card::after {
+    content: attr(data-description);
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: rgba(44, 62, 80, 0.9);
+    color: white;
+    transition: bottom 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.book-card:hover::after {
+    bottom: 0;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.book-detail-container,
+.testimonial-container,
+.contact-container {
+    animation: fadeIn 0.5s ease-in;
+}
+
+/* Button Pulse Effect */
+.buy-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.buy-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255,255,255,0.2);
+    transform: rotate(30deg);
+    transition: all 0.3s;
+}
+
+.buy-btn:hover::after {
+    left: 100%;
+}
+
+/* Testimonial Slide Animation */
+.testimonial {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.testimonial.fade-out {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.testimonial.fade-in {
+    opacity: 1;
+    transform: translateX(0);
+}

@@ -1,0 +1,77 @@
+/* ===== RESPONSIVE STYLES ===== */
+
+/* Tablet Devices */
+@media (max-width: 992px) {
+    .book-detail-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .book-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .filter-controls {
+        flex-direction: column;
+    }
+    
+    .search-box {
+        max-width: 100%;
+    }
+    
+    .book-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+    }
+    
+    .book-card img {
+        height: 220px;
+    }
+    
+    .testimonial-section,
+    .add-testimonial,
+    .contact-info,
+    .contact-form {
+        padding: 20px;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    .book-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .book-info h3 {
+        font-size: 0.9rem;
+    }
+    
+    .book-info p {
+        font-size: 0.8rem;
+    }
+    
+    .page-title {
+        font-size: 1.5rem;
+    }
+    
+    nav ul li a {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+}
