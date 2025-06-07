@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Buku | BukuOnline</title>
+        <!-- CSS Utama -->
+        <link rel="stylesheet" href="css/style.css">
+
+        <!-- CSS Responsive -->
+        <link rel="stylesheet" href="css/responsive.css">
+    
+        <!-- CSS Animasi (Opsional) -->
+        <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <header>
+        <div class="logo">BukuOnline</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="categories.html">Kategori</a></li>
+                <li><a href="testimonials.html">Testimoni</a></li>
+                <li><a href="contact.html">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> &gt; 
+            <a href="categories.html">Kategori</a> &gt; 
+            <span>Detail Buku</span>
+        </div>
+
+        <div class="book-detail-container">
+            <div class="book-cover">
+                <img src="media/books/laut-bercerita.jpg" alt="Laut Bercerita" id="detail-book-image">
+            </div>
+            
+            <div class="book-info">
+                <h1 id="book-title">Laut Bercerita</h1>
+                <p class="author" id="book-author">Oleh: Leila S. Chudori</p>
+                <p class="price" id="book-price">Rp 89.000</p>
+                
+                <div class="rating">
+                    ★★★★☆ (4.2/5)
+                </div>
+                
+                <div class="genre-badge" id="book-genre">Fiksi</div>
+                
+                <div class="synopsis">
+                    <h3>Sinopsis</h3>
+                    <p id="book-description">Novel ini bercerita tentang perjuangan seorang aktivis di masa lalu. Laut Bercerita menyimpan banyak rahasia yang perlahan terungkap...</p>
+                </div>
+                
+                <button class="buy-btn" id="buy-button">Beli Sekarang</button>
+            </div>
+        </div>
+        
+        <div class="related-books">
+            <h2>Buku Serupa</h2>
+            <div class="book-grid" id="related-books">
+                <!-- Akan diisi oleh JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 BukuOnline. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/book-detail.js"></script>
+    <script src="js/books-database.js"></script>
+    <script src="js/search-filter.js"></script> 
+</body>
+</html>

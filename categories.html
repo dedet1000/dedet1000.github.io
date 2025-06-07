@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kategori Buku | BukuOnline</title>
+        <!-- CSS Utama -->
+        <link rel="stylesheet" href="css/style.css">
+
+        <!-- CSS Responsive -->
+        <link rel="stylesheet" href="css/responsive.css">
+    
+        <!-- CSS Animasi (Opsional) -->
+        <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <header>
+        <div class="logo">BukuOnline</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="categories.html" class="active">Kategori</a></li>
+                <li><a href="testimonials.html">Testimoni</a></li>
+                <li><a href="contact.html">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1 class="page-title">Kategori Buku</h1>
+        
+        <div class="filter-controls">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Cari judul atau penulis...">
+                <button id="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            
+            <select id="genre-filter">
+                <option value="all">Semua Kategori</option>
+                <option value="fiksi">Fiksi</option>
+                <option value="non-fiksi">Non-Fiksi</option>
+                <option value="komik">Komik</option>
+                <option value="anak">Buku Anak</option>
+            </select>
+        </div>
+
+        <div class="book-grid">
+            <!-- Konten buku akan diisi oleh JavaScript -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 BukuOnline. All rights reserved.</p>
+    </footer>
+
+    <script src="js/search-filter.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/books-database.js"></script>
+    <script src="js/search-filter.js"></script> 
+</body>
+</html>
