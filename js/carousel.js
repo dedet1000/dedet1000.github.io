@@ -1,43 +1,81 @@
+// carousel.js
 document.addEventListener('DOMContentLoaded', function() {
     const carousel = document.querySelector('.carousel');
-    if (!carousel) return;
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
     
-    const inner = document.createElement('div');
-    inner.className = 'carousel-inner';
-    carousel.appendChild(inner);
-    
+    // Data buku (ambil dari booksDatabase atau array khusus)
     // Ambil 5 buku terlaris dari database
     const carouselBooks = getBestsellers().slice(0, 5);
     
-    // Buat item carousel
-    carouselBooks.forEach(book => {
-        const item = document.createElement('div');
-        item.className = 'carousel-item';
-        item.innerHTML = `
+
+    // Duplikasi item untuk efek infinite
+    
+    // Render carousel items
+    carousel.innerHTML = carouselBooks.map(book => `
+        <div class="carousel-item">
             <div class="book-card">
-                <a href="book-detail.html?id=${book.id}">
-                    <img src="${book.image}" alt="${book.title}">
-                    <div class="book-info">
-                        <h3>${book.title}</h3>
-                        <p>${book.author}</p>
-                        <p class="price">${book.price}</p>
-                    </div>
-                </a>
+                <img src="${book.image}" alt="${book.title}" loading="lazy">
+                <div class="book-info">
+                    <h3>${book.title}</h3>
+                    <p>${book.author}</p>
+                    <p class="price">${book.price}</p>
+                    <a href="book-detail.html?id=${book.id}" class="btn">Detail</a>
+                </div>
             </div>
-        `;
-        inner.appendChild(item);
+        </div>
+    `).join('');
+
+    // Manual Navigation
+    let scrollAmount = 0;
+    const itemWidth = 250; // Sesuaikan dengan lepat item
+    
+    nextBtn.addEventListener('click', () => {
+        carousel.scrollTo({
+            left: (scrollAmount += itemWidth),
+            behavior: 'smooth'
+        });
+        if (scrollAmount >= carousel.scrollWidth / 2) {
+            scrollAmount = 0;
+            carousel.scrollTo({ left: 0, behavior: 'auto' });
+        }
     });
     
-    // Fungsi carousel otomatis
-    let currentIndex = 0;
-    const itemCount = carouselBooks.length;
-    
-    function nextSlide() {
-        currentIndex = (currentIndex + 1) % itemCount;
-        inner.style.transform = `translateX(-${currentIndex * 100}%)`;
-    }
-    
-    if (itemCount > 1) {
-        setInterval(nextSlide, 3000);
-    }
+    prevBtn.addEventListener('click', () => {
+        carousel.scrollTo({
+            left: (scrollAmount -= itemWidth),
+            behavior: 'smooth'
+        });
+        if (scrollAmount < 0) {
+            scrollAmount = carousel.scrollWidth / 2;
+            carousel.scrollTo({ left: scrollAmount, behavior: 'auto' });
+        }
+    });
+
+    // Auto-scroll (opsional)
+    let autoScroll = setInterval(() => {
+        carousel.scrollTo({
+            left: (scrollAmount += itemWidth),
+            behavior: 'smooth'
+        });
+        if (scrollAmount >= carousel.scrollWidth / 2) {
+            scrollAmount = 0;
+            carousel.scrollTo({ left: 0, behavior: 'auto' });
+        }
+    }, 3000);
+
+    // Pause on hover
+    carousel.addEventListener('mouseenter', () => clearInterval(autoScroll));
+    carousel.addEventListener('mouseleave', () => {
+        autoScroll = setInterval(() => {
+            carousel.scrollTo({
+                left: (scrollAmount += itemWidth),
+                behavior: 'smooth'
+            });
+            if (scrollAmount >= carousel.scrollWidth / 2) {
+                scrollAmount = 0;
+                carousel.scrollTo({ left: 0, behavior: 'auto' });
+            }
+        }, 3000);
+    });
 });

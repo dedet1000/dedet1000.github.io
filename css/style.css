@@ -133,25 +133,67 @@ nav ul li a:hover, nav ul li a.active {
 }
 
 /* Carousel Styles */
-.carousel {
+/* styles.css */
+.featured-books {
+    padding: 40px 0;
+    background: #fff;
+}
+
+.carousel-container {
     position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.carousel {
+    display: flex;
     overflow: hidden;
-    height: 350px;
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s;
+}
+
+.carousel-btn:hover {
+    background: #3498db;
+    color: white;
+}
+
+.prev-btn {
+    left: 0;
+}
+
+.next-btn {
+    right: 0;
+}
+
+/* Animasi infinite */
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-250px * 5)); }
 }
 
 .carousel-inner {
     display: flex;
-    transition: transform 0.5s ease;
+    animation: slide 20s linear infinite;
+    width: calc(250px * 10); /* 2x jumlah buku */
 }
-
-.carousel-item {
-    min-width: 50%;
-    padding: 0 1rem;
-}
-.book-card a{
-    text-decoration: none;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
     header {

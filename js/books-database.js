@@ -54,7 +54,7 @@ const booksDatabase = [
         pages: 208,
         publisher: "Gagas Media",
         year: 2017,
-        isBestseller: false
+        isBestseller: true
     },
     {
         id: 5,
