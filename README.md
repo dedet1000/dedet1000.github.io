@@ -19,7 +19,7 @@ Website ini dibangun menggunakan
 - Visual Studio Code 1.101.0 or later
 - GitHub 3.15.2 or later
 - Chrome 137.0.7151.104 or later
-- Git 2.50.0
+- Git 2.50.0 or later
 
 ## STRUKTUR
 website BUKUIN
