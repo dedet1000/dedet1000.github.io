@@ -24,6 +24,9 @@ Website ini dibangun menggunakan
 ## STRUKTUR
 website BUKUIN
 
+## 📁 STRUKTUR PROYEK: Website **BUKUIN**
+
+```
 project-root/
 ├── index.html                # Halaman utama
 ├── categories.html           # Daftar kategori buku
@@ -57,3 +60,4 @@ project-root/
     ├── One Piece Vol. 1.jpg
     ├── laut-bercerita.jpg
     └── loga.jpg
+```
