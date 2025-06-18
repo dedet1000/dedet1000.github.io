@@ -71,3 +71,31 @@
     opacity: 1;
     transform: translateX(0);
 }
+/* Animasi infinite */
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-250px * 5)); }
+}
+
+.carousel-inner {
+    display: flex;
+    animation: slide 20s linear infinite;
+    width: calc(250px * 10); /* 2x jumlah buku */
+}
+/*  Hover Animasi pada Buku */
+.book-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.book-card::after {
+    content: attr(data-description);
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    transition: bottom 0.3s ease;
+}

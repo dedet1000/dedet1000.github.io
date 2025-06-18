@@ -148,14 +148,11 @@ nav ul li a:hover, nav ul li a.active {
 .book-info {
     padding: 1rem;
 }
-
-/* Carousel Styles */
 /* styles.css */
 .featured-books {
-    padding: 40px 0;
+    padding: 40px 50px;
     background: #fff;
 }
-
 .carousel-container {
     position: relative;
     max-width: 1200px;
@@ -198,49 +195,6 @@ nav ul li a:hover, nav ul li a.active {
 
 .next-btn {
     right: 0;
-}
-
-/* Animasi infinite */
-@keyframes slide {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-250px * 5)); }
-}
-
-.carousel-inner {
-    display: flex;
-    animation: slide 20s linear infinite;
-    width: calc(250px * 10); /* 2x jumlah buku */
-}
-/* Responsive Design */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-    }
-    
-    nav ul {
-        margin-top: 1rem;
-    }
-    
-    .book-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    }
-}
-/*  Hover Animasi pada Buku */
-.book-card {
-    position: relative;
-    overflow: hidden;
-}
-
-.book-card::after {
-    content: attr(data-description);
-    position: absolute;
-    bottom: -100%;
-    left: 0;
-    width: 100%;
-    padding: 1rem;
-    background: rgba(0,0,0,0.8);
-    color: white;
-    transition: bottom 0.3s ease;
 }
 
 .book-card:hover::after {
