@@ -25,27 +25,27 @@ Website ini dibangun menggunakan
 website BUKUIN
 
 project-root/
-├── index.html
-├── categories.html
-├── book-detail.html
-├── testimonials.html
-├── contact.html
+├── index.html                # Halaman utama
+├── categories.html           # Daftar kategori buku
+├── book-detail.html          # Detail dari buku tertentu
+├── testimonials.html         # Halaman testimoni pengguna
+├── contact.html              # Formulir kontak
 │
-├── js/
-│   ├── books-database.js       # Database utama (list buku)
-│   ├── carousel.js             # Carousel/banner dengan infinite scroll
-│   ├── search-filter.js        # Pencarian & filter buku
-│   ├── book-detail.js          # Menampilkan detail buku secara dinamis
-│   ├── testimonial.js          # Slider/testimoni pengguna
-│   ├── form-validation.js      # Validasi form (kontak, dsb)
-│   └── script.js               # Fungsi utilitas umum
+├── js/                       # Folder JavaScript
+│   ├── books-database.js     # Database utama (daftar buku)
+│   ├── carousel.js           # Carousel/banner infinite scroll
+│   ├── search-filter.js      # Fitur pencarian & filter
+│   ├── book-detail.js        # Menampilkan detail buku dinamis
+│   ├── testimonial.js        # Slider testimoni pengguna
+│   ├── form-validation.js    # Validasi form kontak
+│   └── script.js             # Fungsi utilitas umum
 │
-├── css/
-│   ├── styles.css              # Gaya utama untuk semua halaman
-│   ├── responsive.css          # Media query & layout responsif
-│   └── animations.css          # Animasi tambahan (hover, fade, dsb)
+├── css/                      # Folder CSS
+│   ├── styles.css            # Gaya utama untuk halaman
+│   ├── responsive.css        # Media query & layout responsif
+│   └── animations.css        # Animasi (hover, fade, dsb)
 │
-└── media/                      # Kumpulan aset gambar (cover, ikon, dll)
+└── media/                    # Folder gambar/media
     ├── 30%.png
     ├── Atomic Habits.jpg
     ├── Bumi Manusia.jpg
