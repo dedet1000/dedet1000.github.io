@@ -57,4 +57,3 @@ project-root/
     ├── One Piece Vol. 1.jpg
     ├── laut-bercerita.jpg
     └── loga.jpg
-
